@@ -72,6 +72,7 @@ include 		$(wildcard $(D) $(D_BONUS))
 
 $(NAME): $(FOBJ) $(LIBFT) $(MLX)
 	$(COMP)  -lmlx -framework OpenGL -framework AppKit $(FOBJ) $(LIBFT) $(MLX) -o $(NAME)
+	mv fdf ../
 
 $(LIBFT):
 	make -C $(PATH_LIBFT)
@@ -88,7 +89,7 @@ clean:
 	make -C $(PATH_MLX) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f ../$(NAME)
 
 re: fclean all
 
